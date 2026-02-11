@@ -1,0 +1,100 @@
+}
+[37m2026-02-10 07:00:01.110[39m[0m[0m	[32m[1mDEBUG[22m[39m[0m[0m	[37m/usr/local/apps/citrineos/02_Util/dist/queue/rabbit-mq/receiver.js:284[39m[0m[0m[1m[37m	CitrineOS Logger:RabbitMqReceiver[39m[22m[0m[0m	_onMessage:Received message: {
+  contentType: [32m'application/json'[39m,
+  contentEncoding: [32m'utf-8'[39m,
+  headers: {
+    action: [32m'RemoteStartTransaction'[39m,
+    correlationId: [32m'da70dca6-8cf0-4f5d-8da2-c2e6996844ba'[39m,
+    eventGroup: [32m'evdriver'[39m,
+    origin: [32m'csms'[39m,
+    state: [32m'1'[39m,
+    stationId: [32m'250822008C06'[39m,
+    tenantId: [32m'1'[39m,
+    timestamp: [32m'2026-02-10T07:00:01.104Z'[39m
+  },
+  deliveryMode: [90mundefined[39m,
+  priority: [90mundefined[39m,
+  correlationId: [90mundefined[39m,
+  replyTo: [90mundefined[39m,
+  expiration: [90mundefined[39m,
+  messageId: [90mundefined[39m,
+  timestamp: [90mundefined[39m,
+  type: [90mundefined[39m,
+  userId: [90mundefined[39m,
+  appId: [90mundefined[39m,
+  clusterId: [90mundefined[39m
+} {"origin":"csms","eventGroup":"evdriver","action":"RemoteStartTransaction","context":{"stationId":"250822008C06","correlationId":"da70dca6-8cf0-4f5d-8da2-c2e6996844ba","tenantId":1,"timestamp":"2026-02-10T07:00:01.104Z"},"state":1,"protocol":"ocpp1.6","payload":{"connectorId":1,"idTag":"CITRINE_USER"}}
+[37m2026-02-10 07:00:01.111[39m[0m[0m	[32m[1mDEBUG[22m[39m[0m[0m	[37m/usr/local/apps/citrineos/00_Base/dist/interfaces/router/AbstractRouter.js:76[39m[0m[0m[1m[37m	CitrineOS Logger:MessageRouterImpl[39m[22m[0m[0m	Received message: Message {
+  _origin: [32m'csms'[39m,
+  _eventGroup: [32m'evdriver'[39m,
+  _action: [32m'RemoteStartTransaction'[39m,
+  _state: [33m1[39m,
+  _context: {
+    stationId: [32m'250822008C06'[39m,
+    correlationId: [32m'da70dca6-8cf0-4f5d-8da2-c2e6996844ba'[39m,
+    tenantId: [33m1[39m,
+    timestamp: [32m'2026-02-10T07:00:01.104Z'[39m
+  },
+  _payload: {
+    connectorId: [33m1[39m,
+    idTag: [32m'CITRINE_USER'[39m
+  },
+  _protocol: [32m'ocpp1.6'[39m
+}
+[37m2026-02-10 07:00:01.349[39m[0m[0m	[32m[1mDEBUG[22m[39m[0m[0m	[37m/usr/local/apps/citrineos/03_Modules/OcppRouter/dist/module/router.js:385[39m[0m[0m[1m[37m	CitrineOS Logger:MessageRouterImpl[39m[22m[0m[0m	Process CallResult 1:250822008C06 da70dca6-8cf0-4f5d-8da2-c2e6996844ba {
+  status: [32m'Rejected'[39m
+}
+[37m2026-02-10 07:00:01.350[39m[0m[0m	[32m[1mDEBUG[22m[39m[0m[0m	[37m/usr/local/apps/citrineos/02_Util/dist/queue/rabbit-mq/sender.js:93[39m[0m[0m[1m[37m	CitrineOS Logger:RabbitMqSender[39m[22m[0m[0m	Publishing to citrineos: {
+  origin: [32m'cs'[39m,
+  eventGroup: [32m'general'[39m,
+  action: [32m'RemoteStartTransaction'[39m,
+  context: {
+    stationId: [32m'250822008C06'[39m,
+    correlationId: [32m'da70dca6-8cf0-4f5d-8da2-c2e6996844ba'[39m,
+    tenantId: [33m1[39m,
+    timestamp: [32m'2026-02-10T07:00:01.349Z'[39m
+  },
+  state: [33m2[39m,
+  protocol: [32m'ocpp1.6'[39m,
+  payload: {
+    status: [32m'Rejected'[39m
+  }
+}
+[37m2026-02-10 07:00:01.356[39m[0m[0m	[32m[1mDEBUG[22m[39m[0m[0m	[37m/usr/local/apps/citrineos/02_Util/dist/queue/rabbit-mq/receiver.js:284[39m[0m[0m[1m[37m	CitrineOS Logger:RabbitMqReceiver[39m[22m[0m[0m	_onMessage:Received message: {
+  contentType: [32m'application/json'[39m,
+  contentEncoding: [32m'utf-8'[39m,
+  headers: {
+    action: [32m'RemoteStartTransaction'[39m,
+    correlationId: [32m'da70dca6-8cf0-4f5d-8da2-c2e6996844ba'[39m,
+    eventGroup: [32m'general'[39m,
+    origin: [32m'cs'[39m,
+    state: [32m'2'[39m,
+    stationId: [32m'250822008C06'[39m,
+    tenantId: [32m'1'[39m,
+    timestamp: [32m'2026-02-10T07:00:01.349Z'[39m
+  },
+  deliveryMode: [90mundefined[39m,
+  priority: [90mundefined[39m,
+  correlationId: [90mundefined[39m,
+  replyTo: [90mundefined[39m,
+  expiration: [90mundefined[39m,
+  messageId: [90mundefined[39m,
+  timestamp: [90mundefined[39m,
+  type: [90mundefined[39m,
+  userId: [90mundefined[39m,
+  appId: [90mundefined[39m,
+  clusterId: [90mundefined[39m
+} {"origin":"cs","eventGroup":"general","action":"RemoteStartTransaction","context":{"stationId":"250822008C06","correlationId":"da70dca6-8cf0-4f5d-8da2-c2e6996844ba","tenantId":1,"timestamp":"2026-02-10T07:00:01.349Z"},"state":2,"protocol":"ocpp1.6","payload":{"status":"Rejected"}}
+[37m2026-02-10 07:00:01.357[39m[0m[0m	[31m[1mERROR[22m[39m[0m[0m	[37m/usr/local/apps/citrineos/03_Modules/EVDriver/dist/module/module.js:603[39m[0m[0m[1m[37m	CitrineOS Logger:EVDriverModule[39m[22m[0m[0m	RemoteStartTransaction rejected by station 250822008C06. Transaction will not start.
+[37m2026-02-10 07:00:07.273[39m[0m[0m	[32m[1mDEBUG[22m[39m[0m[0m	[37m/usr/local/apps/citrineos/02_Util/dist/authorization/provider/LocalByPassAuthProvider.js:25[39m[0m[0m[1m[37m	CitrineOS Logger:LocalBypassAuthProvider[39m[22m[0m[0m	LocalBypassAuthProvider.authenticateToken: Returning dummy token
+[37m2026-02-10 07:00:07.274[39m[0m[0m	[32m[1mDEBUG[22m[39m[0m[0m	[37m/usr/local/apps/citrineos/02_Util/dist/authorization/provider/LocalByPassAuthProvider.js:35[39m[0m[0m[1m[37m	CitrineOS Logger:LocalBypassAuthProvider[39m[22m[0m[0m	LocalBypassAuthProvider.authenticateToken: Bypassing authentication, using dummy user
+[37m2026-02-10 07:00:07.275[39m[0m[0m	[32m[1mDEBUG[22m[39m[0m[0m	[37m/usr/local/apps/citrineos/02_Util/dist/authorization/ApiAuthPlugin.js:59[39m[0m[0m[1m[37m	CitrineOS Logger:AuthPlugin[39m[22m[0m[0m	Authenticated user: local-admin (Local Admin)
+[37m2026-02-10 07:00:07.275[39m[0m[0m	[32m[1mDEBUG[22m[39m[0m[0m	[37m/usr/local/apps/citrineos/02_Util/dist/authorization/ApiAuthPlugin.js:60[39m[0m[0m[1m[37m	CitrineOS Logger:AuthPlugin[39m[22m[0m[0m	Roles: admin, user
+[37m2026-02-10 07:00:07.276[39m[0m[0m	[32m[1mDEBUG[22m[39m[0m[0m	[37m/usr/local/apps/citrineos/02_Util/dist/authorization/provider/LocalByPassAuthProvider.js:58[39m[0m[0m[1m[37m	CitrineOS Logger:LocalBypassAuthProvider[39m[22m[0m[0m	LocalBypassAuthProvider.authorizeUser: Bypassing authorization for GET /
+[37m2026-02-10 07:00:07.276[39m[0m[0m	[32m[1mDEBUG[22m[39m[0m[0m	[37m/usr/local/apps/citrineos/02_Util/dist/authorization/ApiAuthPlugin.js:92[39m[0m[0m[1m[37m	CitrineOS Logger:AuthPlugin[39m[22m[0m[0m	Authorized user local-admin for GET /
+[37m2026-02-10 07:00:13.969[39m[0m[0m	[32m[1mDEBUG[22m[39m[0m[0m	[37m/usr/local/apps/citrineos/02_Util/dist/networkconnection/WebsocketNetworkConnection.js:279[39m[0m[0m[1m[37m	CitrineOS Logger:WebsocketNetworkConnection[39m[22m[0m[0m	Ping received for 1:250822008C06 with message {"type":"Buffer","data":[]}
+[37m2026-02-10 07:00:28.964[39m[0m[0m	[32m[1mDEBUG[22m[39m[0m[0m	[37m/usr/local/apps/citrineos/02_Util/dist/networkconnection/WebsocketNetworkConnection.js:279[39m[0m[0m[1m[37m	CitrineOS Logger:WebsocketNetworkConnection[39m[22m[0m[0m	Ping received for 1:250822008C06 with message {"type":"Buffer","data":[]}
+[37m2026-02-10 07:00:43.964[39m[0m[0m	[32m[1mDEBUG[22m[39m[0m[0m	[37m/usr/local/apps/citrineos/02_Util/dist/networkconnection/WebsocketNetworkConnection.js:279[39m[0m[0m[1m[37m	CitrineOS Logger:WebsocketNetworkConnection[39m[22m[0m[0m	Ping received for 1:250822008C06 with message {"type":"Buffer","data":[]}
+[37m2026-02-10 07:00:44.062[39m[0m[0m	[32m[1mDEBUG[22m[39m[0m[0m	[37m/usr/local/apps/citrineos/02_Util/dist/networkconnection/WebsocketNetworkConnection.js:341[39m[0m[0m[1m[37m	CitrineOS Logger:WebsocketNetworkConnection[39m[22m[0m[0m	Pinging client 1:250822008C06
+[37m2026-02-10 07:00:44.154[39m[0m[0m	[32m[1mDEBUG[22m[39m[0m[0m	[37m/usr/local/apps/citrineos/02_Util/dist/networkconnection/WebsocketNetworkConnection.js:283[39m[0m[0m[1m[37m	CitrineOS Logger:WebsocketNetworkConnection[39m[22m[0m[0m	Pong received for 1:250822008C06
+[37m2026-02-10 07:00:58.985[39m[0m[0m	[32m[1mDEBUG[22m[39m[0m[0m	[37m/usr/local/apps/citrineos/02_Util/dist/networkconnection/WebsocketNetworkConnection.js:279[39m[0m[0m[1m[37m	CitrineOS Logger:WebsocketNetworkConnection[39m[22m[0m[0m	Ping received for 1:250822008C06 with message {"type":"Buffer","data":[]}

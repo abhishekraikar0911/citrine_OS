@@ -25,23 +25,38 @@ export function useStationData(stationId: string) {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const result: any = await client.request(GET_STATION_DETAILS, { stationId });
-
-                // Parse vehicle data from VariableAttributes
-                const vehicleData = parseVehicleData(
-                    result.VariableAttributes,
-                    result.Variables
-                );
-
-                setData({
-                    station: result.ChargingStations[0],
-                    connectors: result.Connectors,
-                    vehicleData,
-                    activeTransaction: result.Transactions?.[0] || null,
+                const response = await fetch('/api/graphql', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ query: GET_STATION_DETAILS, variables: { stationId } })
                 });
-                setError(null);
+
+                const result = await response.json();
+
+                if (result.data) {
+                    const data = result.data;
+                    // Parse vehicle data from VariableAttributes
+                    const vehicleData = parseVehicleData(
+                        data.VariableAttributes,
+                        data.Variables
+                    );
+
+                    setData({
+                        station: data.ChargingStations[0],
+                        connectors: data.Connectors,
+                        vehicleData,
+                        activeTransaction: data.Transactions?.[0] || null,
+                    });
+                }
+
+                if (result.errors && !result.data) {
+                    setError(result.errors[0]?.message || "Failed to fetch station data");
+                } else {
+                    setError(null);
+                }
             } catch (err: any) {
-                setError(err.message);
+                console.error("Error fetching station data:", err);
+                setError(err.message || "Failed to fetch station data");
             } finally {
                 setLoading(false);
             }

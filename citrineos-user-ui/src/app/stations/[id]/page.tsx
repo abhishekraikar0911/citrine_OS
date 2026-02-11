@@ -49,62 +49,86 @@ export default function StationDetailPage() {
         data.connectors.some(c => c.status === 'Available');
 
     return (
-        <div className="min-h-screen bg-[#020617] text-white">
-            {/* Header */}
-            <div className="relative overflow-hidden border-b border-white/10 bg-white/5 px-6 py-8 backdrop-blur-xl">
-                <div className="absolute top-0 left-1/2 -z-10 h-[300px] w-[800px] -translate-x-1/2 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-indigo-500/20 via-transparent to-transparent blur-3xl" />
+        <div className="min-h-screen bg-[#020617] text-white selection:bg-indigo-500/30">
+            {/* Ambient Background */}
+            <div className="fixed inset-0 -z-10 bg-[#020617]">
+                <div className="absolute top-[-10%] left-[-10%] h-[500px] w-[500px] rounded-full bg-indigo-500/10 blur-[120px]" />
+                <div className="absolute bottom-[10%] right-[-5%] h-[400px] w-[400px] rounded-full bg-purple-500/10 blur-[120px]" />
+            </div>
 
+            {/* Header */}
+            <div className="relative border-b border-white/5 bg-white/[0.02] px-6 py-12 backdrop-blur-md">
                 <div className="mx-auto max-w-7xl">
                     <button
                         onClick={() => router.push('/')}
-                        className="mb-4 flex items-center gap-2 text-indigo-400 transition-colors hover:text-indigo-300"
+                        className="group mb-8 flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-indigo-400/60 transition-colors hover:text-indigo-400"
                     >
-                        <ArrowLeft size={20} />
+                        <ArrowLeft size={18} className="transition-transform group-hover:-translate-x-1" />
                         Back to Stations
                     </button>
 
-                    <div className="flex items-start justify-between">
+                    <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
                         <div>
-                            <h1 className="mb-2 text-3xl font-bold text-white">{stationId}</h1>
-                            <p className="text-indigo-300/60">
-                                {data.station?.chargePointVendor} • {data.station?.chargePointModel}
+                            <div className="mb-3 flex items-center gap-3">
+                                <span className="rounded-lg bg-indigo-500/10 p-2 text-indigo-400 ring-1 ring-indigo-500/20">
+                                    <Wifi size={20} />
+                                </span>
+                                <h1 className="text-4xl font-black text-white tracking-tighter md:text-5xl">
+                                    {stationId}
+                                </h1>
+                            </div>
+                            <p className="text-lg font-medium text-indigo-300/40">
+                                {data.station?.chargePointVendor} <span className="mx-2 opacity-20">|</span> {data.station?.chargePointModel}
                             </p>
                         </div>
 
-                        <div className="flex items-center gap-2">
+                        <div className="flex items-center gap-4">
                             {data.station?.isOnline ? (
-                                <>
-                                    <Wifi className="text-emerald-400" size={20} />
-                                    <span className="rounded-full bg-emerald-500/20 px-4 py-2 text-sm font-semibold text-emerald-400">
-                                        Online
+                                <div className="flex items-center gap-3 rounded-2xl bg-emerald-500/10 px-6 py-3 ring-1 ring-emerald-500/20">
+                                    <div className="h-2.5 w-2.5 animate-pulse rounded-full bg-emerald-400 shadow-[0_0_12px_rgba(52,211,153,0.6)]" />
+                                    <span className="text-sm font-black uppercase tracking-widest text-emerald-400">
+                                        Station Online
                                     </span>
-                                </>
+                                </div>
                             ) : (
-                                <>
+                                <div className="flex items-center gap-3 rounded-2xl bg-red-500/10 px-6 py-3 ring-1 ring-red-500/20">
                                     <WifiOff className="text-red-400" size={20} />
-                                    <span className="rounded-full bg-red-500/20 px-4 py-2 text-sm font-semibold text-red-400">
+                                    <span className="text-sm font-black uppercase tracking-widest text-red-400">
                                         Offline
                                     </span>
-                                </>
+                                </div>
                             )}
                         </div>
                     </div>
                 </div>
             </div>
 
-            {/* Content */}
-            <div className="mx-auto max-w-7xl px-6 py-8">
-                <div className="grid gap-6 lg:grid-cols-2">
-                    <VehicleDataCard vehicleData={data.vehicleData} />
-                    <ConnectorStatus connectors={data.connectors} />
-                </div>
+            {/* Main Content */}
+            <div className="mx-auto max-w-7xl px-6 py-12">
+                <div className="grid gap-8 lg:grid-cols-12">
+                    <div className="space-y-8 lg:col-span-12">
+                        {/* Optional Energy Flow Visualization if Charging */}
+                        {data.activeTransaction && (
+                            <div className="animate-enter relative h-1 w-full overflow-hidden rounded-full bg-white/5">
+                                <div className="energy-line absolute h-full w-full" />
+                            </div>
+                        )}
+                    </div>
 
-                <RemoteStartButton
-                    stationId={stationId}
-                    disabled={!canStart && !data.activeTransaction}
-                    vehicleData={data.vehicleData}
-                    activeTransactionId={data.activeTransaction?.transactionId}
-                />
+                    <div className="space-y-8 lg:col-span-7">
+                        <VehicleDataCard vehicleData={data.vehicleData} />
+                        <RemoteStartButton
+                            stationId={stationId}
+                            disabled={!data.station?.isOnline}
+                            vehicleData={data.vehicleData}
+                            activeTransactionId={data.activeTransaction?.transactionId}
+                        />
+                    </div>
+
+                    <div className="lg:col-span-5">
+                        <ConnectorStatus connectors={data.connectors} />
+                    </div>
+                </div>
             </div>
         </div>
     );

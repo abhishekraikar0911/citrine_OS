@@ -1,0 +1,517 @@
+  _protocol: [32m'ocpp1.6'[39m
+}
+[37m2026-02-10 11:06:06.216[39m[0m[0m	[32m[1mDEBUG[22m[39m[0m[0m	[37m/usr/local/apps/citrineos/02_Util/dist/queue/rabbit-mq/sender.js:93[39m[0m[0m[1m[37m	CitrineOS Logger:RabbitMqSender[39m[22m[0m[0m	Publishing to citrineos: {
+  origin: [32m'cs'[39m,
+  eventGroup: [32m'general'[39m,
+  action: [32m'StartTransaction'[39m,
+  context: {
+    stationId: [32m'SIM_250822008C06'[39m,
+    correlationId: [32m'4032cb52-a4c4-4356-b836-df84af9bb2d4'[39m,
+    tenantId: [33m1[39m,
+    timestamp: [32m'2026-02-10T11:06:06.215Z'[39m
+--
+}
+[37m2026-02-10 11:06:06.220[39m[0m[0m	[32m[1mDEBUG[22m[39m[0m[0m	[37m/usr/local/apps/citrineos/02_Util/dist/queue/rabbit-mq/receiver.js:284[39m[0m[0m[1m[37m	CitrineOS Logger:RabbitMqReceiver[39m[22m[0m[0m	_onMessage:Received message: {
+  contentType: [32m'application/json'[39m,
+  contentEncoding: [32m'utf-8'[39m,
+  headers: {
+    action: [32m'StartTransaction'[39m,
+    correlationId: [32m'4032cb52-a4c4-4356-b836-df84af9bb2d4'[39m,
+    eventGroup: [32m'general'[39m,
+    origin: [32m'cs'[39m,
+    state: [32m'1'[39m,
+    stationId: [32m'SIM_250822008C06'[39m,
+--
+  timestamp: [90mundefined[39m,
+  type: [90mundefined[39m,
+  userId: [90mundefined[39m,
+  appId: [90mundefined[39m,
+  clusterId: [90mundefined[39m
+} {"origin":"cs","eventGroup":"general","action":"StartTransaction","context":{"stationId":"SIM_250822008C06","correlationId":"4032cb52-a4c4-4356-b836-df84af9bb2d4","tenantId":1,"timestamp":"2026-02-10T11:06:06.215Z"},"state":1,"protocol":"ocpp1.6","payload":{"connectorId":1,"idTag":"TEST123","meterStart":0,"timestamp":"2026-02-10T11:06:06.212Z"}}
+[37m2026-02-10 11:06:06.220[39m[0m[0m	[32m[1mDEBUG[22m[39m[0m[0m	[37m/usr/local/apps/citrineos/03_Modules/Transactions/dist/module/module.js:333[39m[0m[0m[1m[37m	CitrineOS Logger:TransactionsModule[39m[22m[0m[0m	OCPP 1.6 StartTransaction request received: Message {
+  _origin: [32m'cs'[39m,
+  _eventGroup: [32m'general'[39m,
+  _action: [32m'StartTransaction'[39m,
+  _state: [33m1[39m,
+  _context: {
+    stationId: [32m'SIM_250822008C06'[39m,
+    correlationId: [32m'4032cb52-a4c4-4356-b836-df84af9bb2d4'[39m,
+    tenantId: [33m1[39m,
+--
+  _protocol: [32m'ocpp1.6'[39m
+} {
+  contentType: [32m'application/json'[39m,
+  contentEncoding: [32m'utf-8'[39m,
+  headers: {
+    action: [32m'StartTransaction'[39m,
+    correlationId: [32m'4032cb52-a4c4-4356-b836-df84af9bb2d4'[39m,
+    eventGroup: [32m'general'[39m,
+    origin: [32m'cs'[39m,
+    state: [32m'1'[39m,
+    stationId: [32m'SIM_250822008C06'[39m,
+--
+  clusterId: [90mundefined[39m
+}
+[37m2026-02-10 11:06:06.234[39m[0m[0m	[32m[1mDEBUG[22m[39m[0m[0m	[37m/usr/local/apps/citrineos/02_Util/dist/queue/rabbit-mq/sender.js:93[39m[0m[0m[1m[37m	CitrineOS Logger:RabbitMqSender[39m[22m[0m[0m	Publishing to citrineos: Message {
+  _origin: [32m'csms'[39m,
+  _eventGroup: [32m'general'[39m,
+  _action: [32m'StartTransaction'[39m,
+  _state: [33m2[39m,
+  _context: {
+    stationId: [32m'SIM_250822008C06'[39m,
+    correlationId: [32m'4032cb52-a4c4-4356-b836-df84af9bb2d4'[39m,
+    tenantId: [33m1[39m,
+--
+  _protocol: [32m'ocpp1.6'[39m
+}
+[37m2026-02-10 11:09:50.455[39m[0m[0m	[32m[1mDEBUG[22m[39m[0m[0m	[37m/usr/local/apps/citrineos/02_Util/dist/queue/rabbit-mq/sender.js:93[39m[0m[0m[1m[37m	CitrineOS Logger:RabbitMqSender[39m[22m[0m[0m	Publishing to citrineos: {
+  origin: [32m'cs'[39m,
+  eventGroup: [32m'general'[39m,
+  action: [32m'StartTransaction'[39m,
+  context: {
+    stationId: [32m'SIM_250822008C06'[39m,
+    correlationId: [32m'c71c6c12-fbb4-455f-a82d-1ec977e8bc7f'[39m,
+    tenantId: [33m1[39m,
+    timestamp: [32m'2026-02-10T11:09:50.455Z'[39m
+--
+}
+[37m2026-02-10 11:09:50.463[39m[0m[0m	[32m[1mDEBUG[22m[39m[0m[0m	[37m/usr/local/apps/citrineos/02_Util/dist/queue/rabbit-mq/receiver.js:284[39m[0m[0m[1m[37m	CitrineOS Logger:RabbitMqReceiver[39m[22m[0m[0m	_onMessage:Received message: {
+  contentType: [32m'application/json'[39m,
+  contentEncoding: [32m'utf-8'[39m,
+  headers: {
+    action: [32m'StartTransaction'[39m,
+    correlationId: [32m'c71c6c12-fbb4-455f-a82d-1ec977e8bc7f'[39m,
+    eventGroup: [32m'general'[39m,
+    origin: [32m'cs'[39m,
+    state: [32m'1'[39m,
+    stationId: [32m'SIM_250822008C06'[39m,
+--
+  timestamp: [90mundefined[39m,
+  type: [90mundefined[39m,
+  userId: [90mundefined[39m,
+  appId: [90mundefined[39m,
+  clusterId: [90mundefined[39m
+} {"origin":"cs","eventGroup":"general","action":"StartTransaction","context":{"stationId":"SIM_250822008C06","correlationId":"c71c6c12-fbb4-455f-a82d-1ec977e8bc7f","tenantId":1,"timestamp":"2026-02-10T11:09:50.455Z"},"state":1,"protocol":"ocpp1.6","payload":{"connectorId":1,"idTag":"TEST123","meterStart":0,"timestamp":"2026-02-10T11:09:50.453Z"}}
+[37m2026-02-10 11:09:50.463[39m[0m[0m	[32m[1mDEBUG[22m[39m[0m[0m	[37m/usr/local/apps/citrineos/03_Modules/Transactions/dist/module/module.js:333[39m[0m[0m[1m[37m	CitrineOS Logger:TransactionsModule[39m[22m[0m[0m	OCPP 1.6 StartTransaction request received: Message {
+  _origin: [32m'cs'[39m,
+  _eventGroup: [32m'general'[39m,
+  _action: [32m'StartTransaction'[39m,
+  _state: [33m1[39m,
+  _context: {
+    stationId: [32m'SIM_250822008C06'[39m,
+    correlationId: [32m'c71c6c12-fbb4-455f-a82d-1ec977e8bc7f'[39m,
+    tenantId: [33m1[39m,
+--
+  _protocol: [32m'ocpp1.6'[39m
+} {
+  contentType: [32m'application/json'[39m,
+  contentEncoding: [32m'utf-8'[39m,
+  headers: {
+    action: [32m'StartTransaction'[39m,
+    correlationId: [32m'c71c6c12-fbb4-455f-a82d-1ec977e8bc7f'[39m,
+    eventGroup: [32m'general'[39m,
+    origin: [32m'cs'[39m,
+    state: [32m'1'[39m,
+    stationId: [32m'SIM_250822008C06'[39m,
+--
+	[37m/usr/local/apps/citrineos/node_modules/sequelize/lib/model.js:2490[39m[0m[0m
+  • [33mTransactionEvent.js[39m[0m[0m	[0m[0m
+	[37masync /usr/local/apps/citrineos/01_Data/dist/layers/sequelize/repository/TransactionEvent.js:498[39m[0m[0m
+  • [33msequelize.js[39m[0m[0m	[0m[0m
+	[37masync /usr/local/apps/citrineos/node_modules/sequelize/lib/sequelize.js:507[39m[0m[0m
+  • [33mTransactionEvent.js[39m[0m[0m	async SequelizeTransactionEventRepository.createTransactionByStartTransaction[0m[0m
+	[37m/usr/local/apps/citrineos/01_Data/dist/layers/sequelize/repository/TransactionEvent.js:444[39m[0m[0m
+  • [33mmodule.js[39m[0m[0m	async TransactionsModule._handleOcpp16StartTransaction[0m[0m
+	[37m/usr/local/apps/citrineos/03_Modules/Transactions/dist/module/module.js:346[39m[0m[0m
+  • [33mAbstractModule.js[39m[0m[0m	async TransactionsModule.handle[0m[0m
+	[37m/usr/local/apps/citrineos/00_Base/dist/interfaces/modules/AbstractModule.js:80[39m[0m[0m[0m[0m
+[37m2026-02-10 11:09:50.495[39m[0m[0m	[32m[1mDEBUG[22m[39m[0m[0m	[37m/usr/local/apps/citrineos/02_Util/dist/queue/rabbit-mq/sender.js:93[39m[0m[0m[1m[37m	CitrineOS Logger:RabbitMqSender[39m[22m[0m[0m	Publishing to citrineos: Message {
+  _origin: [32m'csms'[39m,
+  _eventGroup: [32m'general'[39m,
+  _action: [32m'StartTransaction'[39m,
+  _state: [33m2[39m,
+  _context: {
+    stationId: [32m'SIM_250822008C06'[39m,
+    correlationId: [32m'c71c6c12-fbb4-455f-a82d-1ec977e8bc7f'[39m,
+    tenantId: [33m1[39m,
+--
+}
+[37m2026-02-10 11:09:50.498[39m[0m[0m	[32m[1mDEBUG[22m[39m[0m[0m	[37m/usr/local/apps/citrineos/02_Util/dist/queue/rabbit-mq/receiver.js:284[39m[0m[0m[1m[37m	CitrineOS Logger:RabbitMqReceiver[39m[22m[0m[0m	_onMessage:Received message: {
+  contentType: [32m'application/json'[39m,
+  contentEncoding: [32m'utf-8'[39m,
+  headers: {
+    action: [32m'StartTransaction'[39m,
+    correlationId: [32m'c71c6c12-fbb4-455f-a82d-1ec977e8bc7f'[39m,
+    eventGroup: [32m'general'[39m,
+    origin: [32m'csms'[39m,
+--
+  contentEncoding: [32m'utf-8'[39m,
+--
+  _protocol: [32m'ocpp1.6'[39m
+}
+[37m2026-02-10 11:11:16.717[39m[0m[0m	[32m[1mDEBUG[22m[39m[0m[0m	[37m/usr/local/apps/citrineos/02_Util/dist/queue/rabbit-mq/sender.js:93[39m[0m[0m[1m[37m	CitrineOS Logger:RabbitMqSender[39m[22m[0m[0m	Publishing to citrineos: {
+  origin: [32m'cs'[39m,
+  eventGroup: [32m'general'[39m,
+  action: [32m'StartTransaction'[39m,
+  context: {
+    stationId: [32m'SIM_250822008C06'[39m,
+    correlationId: [32m'7ce982fc-c2cc-461f-ab17-d3d5a8c42395'[39m,
+    tenantId: [33m1[39m,
+    timestamp: [32m'2026-02-10T11:11:16.717Z'[39m
+--
+}
+[37m2026-02-10 11:11:16.722[39m[0m[0m	[32m[1mDEBUG[22m[39m[0m[0m	[37m/usr/local/apps/citrineos/02_Util/dist/queue/rabbit-mq/receiver.js:284[39m[0m[0m[1m[37m	CitrineOS Logger:RabbitMqReceiver[39m[22m[0m[0m	_onMessage:Received message: {
+  contentType: [32m'application/json'[39m,
+  contentEncoding: [32m'utf-8'[39m,
+  headers: {
+    action: [32m'StartTransaction'[39m,
+    correlationId: [32m'7ce982fc-c2cc-461f-ab17-d3d5a8c42395'[39m,
+    eventGroup: [32m'general'[39m,
+    origin: [32m'cs'[39m,
+    state: [32m'1'[39m,
+    stationId: [32m'SIM_250822008C06'[39m,
+--
+  timestamp: [90mundefined[39m,
+  type: [90mundefined[39m,
+  userId: [90mundefined[39m,
+  appId: [90mundefined[39m,
+  clusterId: [90mundefined[39m
+} {"origin":"cs","eventGroup":"general","action":"StartTransaction","context":{"stationId":"SIM_250822008C06","correlationId":"7ce982fc-c2cc-461f-ab17-d3d5a8c42395","tenantId":1,"timestamp":"2026-02-10T11:11:16.717Z"},"state":1,"protocol":"ocpp1.6","payload":{"connectorId":1,"idTag":"TEST123","meterStart":0,"timestamp":"2026-02-10T11:11:16.710Z"}}
+[37m2026-02-10 11:11:16.723[39m[0m[0m	[32m[1mDEBUG[22m[39m[0m[0m	[37m/usr/local/apps/citrineos/03_Modules/Transactions/dist/module/module.js:333[39m[0m[0m[1m[37m	CitrineOS Logger:TransactionsModule[39m[22m[0m[0m	OCPP 1.6 StartTransaction request received: Message {
+  _origin: [32m'cs'[39m,
+  _eventGroup: [32m'general'[39m,
+  _action: [32m'StartTransaction'[39m,
+  _state: [33m1[39m,
+  _context: {
+    stationId: [32m'SIM_250822008C06'[39m,
+    correlationId: [32m'7ce982fc-c2cc-461f-ab17-d3d5a8c42395'[39m,
+    tenantId: [33m1[39m,
+--
+  _protocol: [32m'ocpp1.6'[39m
+} {
+  contentType: [32m'application/json'[39m,
+  contentEncoding: [32m'utf-8'[39m,
+  headers: {
+    action: [32m'StartTransaction'[39m,
+    correlationId: [32m'7ce982fc-c2cc-461f-ab17-d3d5a8c42395'[39m,
+    eventGroup: [32m'general'[39m,
+    origin: [32m'cs'[39m,
+    state: [32m'1'[39m,
+    stationId: [32m'SIM_250822008C06'[39m,
+--
+	[37m/usr/local/apps/citrineos/node_modules/sequelize/lib/model.js:2490[39m[0m[0m
+  • [33mTransactionEvent.js[39m[0m[0m	[0m[0m
+	[37masync /usr/local/apps/citrineos/01_Data/dist/layers/sequelize/repository/TransactionEvent.js:498[39m[0m[0m
+  • [33msequelize.js[39m[0m[0m	[0m[0m
+	[37masync /usr/local/apps/citrineos/node_modules/sequelize/lib/sequelize.js:507[39m[0m[0m
+  • [33mTransactionEvent.js[39m[0m[0m	async SequelizeTransactionEventRepository.createTransactionByStartTransaction[0m[0m
+	[37m/usr/local/apps/citrineos/01_Data/dist/layers/sequelize/repository/TransactionEvent.js:444[39m[0m[0m
+  • [33mmodule.js[39m[0m[0m	async TransactionsModule._handleOcpp16StartTransaction[0m[0m
+	[37m/usr/local/apps/citrineos/03_Modules/Transactions/dist/module/module.js:346[39m[0m[0m
+  • [33mAbstractModule.js[39m[0m[0m	async TransactionsModule.handle[0m[0m
+	[37m/usr/local/apps/citrineos/00_Base/dist/interfaces/modules/AbstractModule.js:80[39m[0m[0m[0m[0m
+[37m2026-02-10 11:11:16.785[39m[0m[0m	[32m[1mDEBUG[22m[39m[0m[0m	[37m/usr/local/apps/citrineos/02_Util/dist/queue/rabbit-mq/sender.js:93[39m[0m[0m[1m[37m	CitrineOS Logger:RabbitMqSender[39m[22m[0m[0m	Publishing to citrineos: Message {
+  _origin: [32m'csms'[39m,
+  _eventGroup: [32m'general'[39m,
+  _action: [32m'StartTransaction'[39m,
+  _state: [33m2[39m,
+  _context: {
+    stationId: [32m'SIM_250822008C06'[39m,
+    correlationId: [32m'7ce982fc-c2cc-461f-ab17-d3d5a8c42395'[39m,
+    tenantId: [33m1[39m,
+--
+}
+[37m2026-02-10 11:11:16.787[39m[0m[0m	[32m[1mDEBUG[22m[39m[0m[0m	[37m/usr/local/apps/citrineos/02_Util/dist/queue/rabbit-mq/receiver.js:284[39m[0m[0m[1m[37m	CitrineOS Logger:RabbitMqReceiver[39m[22m[0m[0m	_onMessage:Received message: {
+  contentType: [32m'application/json'[39m,
+  contentEncoding: [32m'utf-8'[39m,
+  headers: {
+    action: [32m'StartTransaction'[39m,
+    correlationId: [32m'7ce982fc-c2cc-461f-ab17-d3d5a8c42395'[39m,
+    eventGroup: [32m'general'[39m,
+    origin: [32m'csms'[39m,
+--
+  messageId: [90mundefined[39m,
+  timestamp: [90mundefined[39m,
+  type: [90mundefined[39m,
+  userId: [90mundefined[39m,
+  appId: [90mundefined[39m,
+  clusterId: [90mundefined[39m
+} {"_origin":"csms","_eventGroup":"general","_action":"StartTransaction","_state":2,"_context":{"stationId":"SIM_250822008C06","correlationId":"7ce982fc-c2cc-461f-ab17-d3d5a8c42395","tenantId":1,"timestamp":"2026-02-10T11:11:16.717Z"},"_payload":{"idTagInfo":{"status":"Invalid"},"transactionId":0},"_protocol":"ocpp1.6"}
+[37m2026-02-10 11:11:16.789[39m[0m[0m	[32m[1mDEBUG[22m[39m[0m[0m	[37m/usr/local/apps/citrineos/00_Base/dist/interfaces/router/AbstractRouter.js:76[39m[0m[0m[1m[37m	CitrineOS Logger:MessageRouterImpl[39m[22m[0m[0m	Received message: Message {
+  _origin: [32m'csms'[39m,
+  _eventGroup: [32m'general'[39m,
+  _action: [32m'StartTransaction'[39m,
+  _state: [33m2[39m,
+  _context: {
+    stationId: [32m'SIM_250822008C06'[39m,
+    correlationId: [32m'7ce982fc-c2cc-461f-ab17-d3d5a8c42395'[39m,
+    tenantId: [33m1[39m,
+--
+[37m2026-02-10 11:11:50.350[39m[0m[0m	[32m[1mDEBUG[22m[39m[0m[0m	[37m/usr/local/apps/citrineos/02_Util/dist/networkconnection/WebsocketNetworkConnection.js:341[39m[0m[0m[1m[37m	CitrineOS Logger:WebsocketNetworkConnection[39m[22m[0m[0m	Pinging client 1:SIM_250822008C06
+[37m2026-02-10 11:11:51.079[39m[0m[0m	[32m[1mDEBUG[22m[39m[0m[0m	[37m/usr/local/apps/citrineos/02_Util/dist/authorization/provider/LocalByPassAuthProvider.js:25[39m[0m[0m[1m[37m	CitrineOS Logger:LocalBypassAuthProvider[39m[22m[0m[0m	LocalBypassAuthProvider.authenticateToken: Returning dummy token
+[37m2026-02-10 11:11:51.081[39m[0m[0m	[32m[1mDEBUG[22m[39m[0m[0m	[37m/usr/local/apps/citrineos/02_Util/dist/authorization/provider/LocalByPassAuthProvider.js:35[39m[0m[0m[1m[37m	CitrineOS Logger:LocalBypassAuthProvider[39m[22m[0m[0m	LocalBypassAuthProvider.authenticateToken: Bypassing authentication, using dummy user
+[37m2026-02-10 11:11:51.081[39m[0m[0m	[32m[1mDEBUG[22m[39m[0m[0m	[37m/usr/local/apps/citrineos/02_Util/dist/authorization/ApiAuthPlugin.js:59[39m[0m[0m[1m[37m	CitrineOS Logger:AuthPlugin[39m[22m[0m[0m	Authenticated user: local-admin (Local Admin)
+[37m2026-02-10 11:11:51.082[39m[0m[0m	[32m[1mDEBUG[22m[39m[0m[0m	[37m/usr/local/apps/citrineos/02_Util/dist/authorization/ApiAuthPlugin.js:60[39m[0m[0m[1m[37m	CitrineOS Logger:AuthPlugin[39m[22m[0m[0m	Roles: admin, user
+[37m2026-02-10 11:11:51.082[39m[0m[0m	[32m[1mDEBUG[22m[39m[0m[0m	[37m/usr/local/apps/citrineos/02_Util/dist/authorization/provider/LocalByPassAuthProvider.js:58[39m[0m[0m[1m[37m	CitrineOS Logger:LocalBypassAuthProvider[39m[22m[0m[0m	LocalBypassAuthProvider.authorizeUser: Bypassing authorization for POST /ocpp/1.6/evdriver/remoteStartTransaction?identifier=SIM_250822008C06&tenantId=1
+[37m2026-02-10 11:11:51.083[39m[0m[0m	[32m[1mDEBUG[22m[39m[0m[0m	[37m/usr/local/apps/citrineos/02_Util/dist/authorization/ApiAuthPlugin.js:92[39m[0m[0m[1m[37m	CitrineOS Logger:AuthPlugin[39m[22m[0m[0m	Authorized user local-admin for POST /ocpp/1.6/evdriver/remoteStartTransaction?identifier=SIM_250822008C06&tenantId=1
+[37m2026-02-10 11:11:51.085[39m[0m[0m	[32m[1mDEBUG[22m[39m[0m[0m	[37m/usr/local/apps/citrineos/02_Util/dist/queue/rabbit-mq/sender.js:93[39m[0m[0m[1m[37m	CitrineOS Logger:RabbitMqSender[39m[22m[0m[0m	Publishing to citrineos: {
+  origin: [32m'csms'[39m,
+  eventGroup: [32m'evdriver'[39m,
+  action: [32m'RemoteStartTransaction'[39m,
+  context: {
+    stationId: [32m'SIM_250822008C06'[39m,
+    correlationId: [32m'd2f68f4e-2265-48a8-a4ea-1b3d1570a6f8'[39m,
+    tenantId: [33m1[39m,
+    timestamp: [32m'2026-02-10T11:11:51.085Z'[39m
+--
+}
+[37m2026-02-10 11:11:51.094[39m[0m[0m	[32m[1mDEBUG[22m[39m[0m[0m	[37m/usr/local/apps/citrineos/02_Util/dist/queue/rabbit-mq/receiver.js:284[39m[0m[0m[1m[37m	CitrineOS Logger:RabbitMqReceiver[39m[22m[0m[0m	_onMessage:Received message: {
+  contentType: [32m'application/json'[39m,
+  contentEncoding: [32m'utf-8'[39m,
+  headers: {
+    action: [32m'RemoteStartTransaction'[39m,
+    correlationId: [32m'd2f68f4e-2265-48a8-a4ea-1b3d1570a6f8'[39m,
+    eventGroup: [32m'evdriver'[39m,
+    origin: [32m'csms'[39m,
+    state: [32m'1'[39m,
+    stationId: [32m'SIM_250822008C06'[39m,
+--
+  timestamp: [90mundefined[39m,
+  type: [90mundefined[39m,
+  userId: [90mundefined[39m,
+  appId: [90mundefined[39m,
+  clusterId: [90mundefined[39m
+} {"origin":"csms","eventGroup":"evdriver","action":"RemoteStartTransaction","context":{"stationId":"SIM_250822008C06","correlationId":"d2f68f4e-2265-48a8-a4ea-1b3d1570a6f8","tenantId":1,"timestamp":"2026-02-10T11:11:51.085Z"},"state":1,"protocol":"ocpp1.6","payload":{"idTag":"TEST123","connectorId":1}}
+[37m2026-02-10 11:11:51.095[39m[0m[0m	[32m[1mDEBUG[22m[39m[0m[0m	[37m/usr/local/apps/citrineos/00_Base/dist/interfaces/router/AbstractRouter.js:76[39m[0m[0m[1m[37m	CitrineOS Logger:MessageRouterImpl[39m[22m[0m[0m	Received message: Message {
+  _origin: [32m'csms'[39m,
+  _eventGroup: [32m'evdriver'[39m,
+  _action: [32m'RemoteStartTransaction'[39m,
+  _state: [33m1[39m,
+  _context: {
+    stationId: [32m'SIM_250822008C06'[39m,
+    correlationId: [32m'd2f68f4e-2265-48a8-a4ea-1b3d1570a6f8'[39m,
+    tenantId: [33m1[39m,
+--
+}
+[37m2026-02-10 11:11:51.096[39m[0m[0m	[32m[1mDEBUG[22m[39m[0m[0m	[37m/usr/local/apps/citrineos/02_Util/dist/queue/rabbit-mq/receiver.js:284[39m[0m[0m[1m[37m	CitrineOS Logger:RabbitMqReceiver[39m[22m[0m[0m	_onMessage:Received message: {
+  contentType: [32m'application/json'[39m,
+  contentEncoding: [32m'utf-8'[39m,
+  headers: {
+    action: [32m'RemoteStartTransaction'[39m,
+    correlationId: [32m'd2f68f4e-2265-48a8-a4ea-1b3d1570a6f8'[39m,
+    eventGroup: [32m'evdriver'[39m,
+    origin: [32m'csms'[39m,
+    state: [32m'1'[39m,
+    stationId: [32m'SIM_250822008C06'[39m,
+--
+  timestamp: [90mundefined[39m,
+  type: [90mundefined[39m,
+  userId: [90mundefined[39m,
+  appId: [90mundefined[39m,
+  clusterId: [90mundefined[39m
+} {"origin":"csms","eventGroup":"evdriver","action":"RemoteStartTransaction","context":{"stationId":"SIM_250822008C06","correlationId":"d2f68f4e-2265-48a8-a4ea-1b3d1570a6f8","tenantId":1,"timestamp":"2026-02-10T11:11:51.085Z"},"state":1,"protocol":"ocpp1.6","payload":{"idTag":"TEST123","connectorId":1}}
+[37m2026-02-10 11:11:51.096[39m[0m[0m	[32m[1mDEBUG[22m[39m[0m[0m	[37m/usr/local/apps/citrineos/00_Base/dist/interfaces/router/AbstractRouter.js:76[39m[0m[0m[1m[37m	CitrineOS Logger:MessageRouterImpl[39m[22m[0m[0m	Received message: Message {
+  _origin: [32m'csms'[39m,
+  _eventGroup: [32m'evdriver'[39m,
+  _action: [32m'RemoteStartTransaction'[39m,
+  _state: [33m1[39m,
+  _context: {
+    stationId: [32m'SIM_250822008C06'[39m,
+    correlationId: [32m'd2f68f4e-2265-48a8-a4ea-1b3d1570a6f8'[39m,
+    tenantId: [33m1[39m,
+--
+  _protocol: [32m'ocpp1.6'[39m
+}
+[37m2026-02-10 11:11:51.097[39m[0m[0m	[34m[1mINFO[22m[39m[0m[0m	[37m/usr/local/apps/citrineos/03_Modules/OcppRouter/dist/module/router.js:211[39m[0m[0m[1m[37m	CitrineOS Logger:MessageRouterImpl[39m[22m[0m[0m	Call already in progress, throwing retry exception 1:SIM_250822008C06 [
+  [33m2[39m,
+  [32m'd2f68f4e-2265-48a8-a4ea-1b3d1570a6f8'[39m,
+  [32m'RemoteStartTransaction'[39m,
+  {
+    idTag: [32m'TEST123'[39m,
+    connectorId: [33m1[39m
+  }
+]
+--
+  status: [32m'Accepted'[39m
+}
+[37m2026-02-10 11:11:51.102[39m[0m[0m	[32m[1mDEBUG[22m[39m[0m[0m	[37m/usr/local/apps/citrineos/02_Util/dist/queue/rabbit-mq/sender.js:93[39m[0m[0m[1m[37m	CitrineOS Logger:RabbitMqSender[39m[22m[0m[0m	Publishing to citrineos: {
+  origin: [32m'cs'[39m,
+  eventGroup: [32m'general'[39m,
+  action: [32m'RemoteStartTransaction'[39m,
+  context: {
+    stationId: [32m'SIM_250822008C06'[39m,
+    correlationId: [32m'd2f68f4e-2265-48a8-a4ea-1b3d1570a6f8'[39m,
+    tenantId: [33m1[39m,
+    timestamp: [32m'2026-02-10T11:11:51.101Z'[39m
+--
+}
+[37m2026-02-10 11:11:51.104[39m[0m[0m	[32m[1mDEBUG[22m[39m[0m[0m	[37m/usr/local/apps/citrineos/02_Util/dist/queue/rabbit-mq/receiver.js:284[39m[0m[0m[1m[37m	CitrineOS Logger:RabbitMqReceiver[39m[22m[0m[0m	_onMessage:Received message: {
+  contentType: [32m'application/json'[39m,
+  contentEncoding: [32m'utf-8'[39m,
+  headers: {
+    action: [32m'RemoteStartTransaction'[39m,
+    correlationId: [32m'd2f68f4e-2265-48a8-a4ea-1b3d1570a6f8'[39m,
+    eventGroup: [32m'evdriver'[39m,
+    origin: [32m'csms'[39m,
+    state: [32m'1'[39m,
+    stationId: [32m'SIM_250822008C06'[39m,
+--
+  timestamp: [90mundefined[39m,
+  type: [90mundefined[39m,
+  userId: [90mundefined[39m,
+  appId: [90mundefined[39m,
+  clusterId: [90mundefined[39m
+} {"origin":"csms","eventGroup":"evdriver","action":"RemoteStartTransaction","context":{"stationId":"SIM_250822008C06","correlationId":"d2f68f4e-2265-48a8-a4ea-1b3d1570a6f8","tenantId":1,"timestamp":"2026-02-10T11:11:51.085Z"},"state":1,"protocol":"ocpp1.6","payload":{"idTag":"TEST123","connectorId":1}}
+[37m2026-02-10 11:11:51.105[39m[0m[0m	[32m[1mDEBUG[22m[39m[0m[0m	[37m/usr/local/apps/citrineos/00_Base/dist/interfaces/router/AbstractRouter.js:76[39m[0m[0m[1m[37m	CitrineOS Logger:MessageRouterImpl[39m[22m[0m[0m	Received message: Message {
+  _origin: [32m'csms'[39m,
+  _eventGroup: [32m'evdriver'[39m,
+  _action: [32m'RemoteStartTransaction'[39m,
+  _state: [33m1[39m,
+  _context: {
+    stationId: [32m'SIM_250822008C06'[39m,
+    correlationId: [32m'd2f68f4e-2265-48a8-a4ea-1b3d1570a6f8'[39m,
+    tenantId: [33m1[39m,
+--
+}
+[37m2026-02-10 11:11:51.111[39m[0m[0m	[32m[1mDEBUG[22m[39m[0m[0m	[37m/usr/local/apps/citrineos/02_Util/dist/queue/rabbit-mq/receiver.js:284[39m[0m[0m[1m[37m	CitrineOS Logger:RabbitMqReceiver[39m[22m[0m[0m	_onMessage:Received message: {
+  contentType: [32m'application/json'[39m,
+  contentEncoding: [32m'utf-8'[39m,
+  headers: {
+    action: [32m'RemoteStartTransaction'[39m,
+    correlationId: [32m'd2f68f4e-2265-48a8-a4ea-1b3d1570a6f8'[39m,
+    eventGroup: [32m'general'[39m,
+    origin: [32m'cs'[39m,
+    state: [32m'2'[39m,
+    stationId: [32m'SIM_250822008C06'[39m,
+--
+  timestamp: [90mundefined[39m,
+  type: [90mundefined[39m,
+  userId: [90mundefined[39m,
+  appId: [90mundefined[39m,
+  clusterId: [90mundefined[39m
+} {"origin":"cs","eventGroup":"general","action":"RemoteStartTransaction","context":{"stationId":"SIM_250822008C06","correlationId":"d2f68f4e-2265-48a8-a4ea-1b3d1570a6f8","tenantId":1,"timestamp":"2026-02-10T11:11:51.101Z"},"state":2,"protocol":"ocpp1.6","payload":{"status":"Accepted"}}
+[37m2026-02-10 11:11:51.112[39m[0m[0m	[34m[1mINFO[22m[39m[0m[0m	[37m/usr/local/apps/citrineos/03_Modules/EVDriver/dist/module/module.js:601[39m[0m[0m[1m[37m	CitrineOS Logger:EVDriverModule[39m[22m[0m[0m	RemoteStartTransaction accepted by station SIM_250822008C06. Expecting StartTransaction request to follow.
+[37m2026-02-10 11:11:51.113[39m[0m[0m	[32m[1mDEBUG[22m[39m[0m[0m	[37m/usr/local/apps/citrineos/03_Modules/OcppRouter/dist/module/router.js:385[39m[0m[0m[1m[37m	CitrineOS Logger:MessageRouterImpl[39m[22m[0m[0m	Process CallResult 1:SIM_250822008C06 d2f68f4e-2265-48a8-a4ea-1b3d1570a6f8 {
+  status: [32m'Accepted'[39m
+}
+[37m2026-02-10 11:11:51.114[39m[0m[0m	[32m[1mDEBUG[22m[39m[0m[0m	[37m/usr/local/apps/citrineos/02_Util/dist/queue/rabbit-mq/sender.js:93[39m[0m[0m[1m[37m	CitrineOS Logger:RabbitMqSender[39m[22m[0m[0m	Publishing to citrineos: {
+  origin: [32m'cs'[39m,
+  eventGroup: [32m'general'[39m,
+  action: [32m'RemoteStartTransaction'[39m,
+  context: {
+    stationId: [32m'SIM_250822008C06'[39m,
+    correlationId: [32m'd2f68f4e-2265-48a8-a4ea-1b3d1570a6f8'[39m,
+    tenantId: [33m1[39m,
+    timestamp: [32m'2026-02-10T11:11:51.113Z'[39m
+--
+}
+[37m2026-02-10 11:11:51.121[39m[0m[0m	[32m[1mDEBUG[22m[39m[0m[0m	[37m/usr/local/apps/citrineos/02_Util/dist/queue/rabbit-mq/receiver.js:284[39m[0m[0m[1m[37m	CitrineOS Logger:RabbitMqReceiver[39m[22m[0m[0m	_onMessage:Received message: {
+  contentType: [32m'application/json'[39m,
+  contentEncoding: [32m'utf-8'[39m,
+  headers: {
+    action: [32m'RemoteStartTransaction'[39m,
+    correlationId: [32m'd2f68f4e-2265-48a8-a4ea-1b3d1570a6f8'[39m,
+    eventGroup: [32m'general'[39m,
+    origin: [32m'cs'[39m,
+    state: [32m'2'[39m,
+    stationId: [32m'SIM_250822008C06'[39m,
+--
+  timestamp: [90mundefined[39m,
+  type: [90mundefined[39m,
+  userId: [90mundefined[39m,
+  appId: [90mundefined[39m,
+  clusterId: [90mundefined[39m
+} {"origin":"cs","eventGroup":"general","action":"RemoteStartTransaction","context":{"stationId":"SIM_250822008C06","correlationId":"d2f68f4e-2265-48a8-a4ea-1b3d1570a6f8","tenantId":1,"timestamp":"2026-02-10T11:11:51.113Z"},"state":2,"protocol":"ocpp1.6","payload":{"status":"Accepted"}}
+[37m2026-02-10 11:11:51.122[39m[0m[0m	[34m[1mINFO[22m[39m[0m[0m	[37m/usr/local/apps/citrineos/03_Modules/EVDriver/dist/module/module.js:601[39m[0m[0m[1m[37m	CitrineOS Logger:EVDriverModule[39m[22m[0m[0m	RemoteStartTransaction accepted by station SIM_250822008C06. Expecting StartTransaction request to follow.
+[37m2026-02-10 11:11:53.105[39m[0m[0m	[32m[1mDEBUG[22m[39m[0m[0m	[37m/usr/local/apps/citrineos/02_Util/dist/queue/rabbit-mq/sender.js:93[39m[0m[0m[1m[37m	CitrineOS Logger:RabbitMqSender[39m[22m[0m[0m	Publishing to citrineos: {
+  origin: [32m'cs'[39m,
+  eventGroup: [32m'general'[39m,
+  action: [32m'StartTransaction'[39m,
+  context: {
+    stationId: [32m'SIM_250822008C06'[39m,
+    correlationId: [32m'310c1f0a-e439-4bc8-b247-7e125f7041c4'[39m,
+    tenantId: [33m1[39m,
+    timestamp: [32m'2026-02-10T11:11:53.104Z'[39m
+--
+  }
+}
+[37m2026-02-10 11:11:53.111[39m[0m[0m	[31m[1mERROR[22m[39m[0m[0m	[37m/usr/local/apps/citrineos/03_Modules/OcppRouter/dist/module/router.js:331[39m[0m[0m[1m[37m	CitrineOS Logger:MessageRouterImpl[39m[22m[0m[0m	Failed to process Call message 1:SIM_250822008C06 [
+  [33m2[39m,
+  [32m'5b106aa1-602e-467e-b79b-136a6a60d4f8'[39m,
+  [32m'StartTransaction'[39m,
+  {
+    connectorId: [33m1[39m,
+    idTag: [32m'TEST123'[39m,
+    meterStart: [33m0[39m,
+    timestamp: [32m'2026-02-10T11:11:53.108Z'[39m
+--
+	[37m/usr/local/apps/citrineos/03_Modules/OcppRouter/dist/module/router.js:137[39m[0m[0m[0m[0m
+[37m2026-02-10 11:11:53.117[39m[0m[0m	[32m[1mDEBUG[22m[39m[0m[0m	[37m/usr/local/apps/citrineos/02_Util/dist/queue/rabbit-mq/receiver.js:284[39m[0m[0m[1m[37m	CitrineOS Logger:RabbitMqReceiver[39m[22m[0m[0m	_onMessage:Received message: {
+  contentType: [32m'application/json'[39m,
+  contentEncoding: [32m'utf-8'[39m,
+  headers: {
+    action: [32m'StartTransaction'[39m,
+    correlationId: [32m'310c1f0a-e439-4bc8-b247-7e125f7041c4'[39m,
+    eventGroup: [32m'general'[39m,
+    origin: [32m'cs'[39m,
+    state: [32m'1'[39m,
+    stationId: [32m'SIM_250822008C06'[39m,
+--
+  timestamp: [90mundefined[39m,
+  type: [90mundefined[39m,
+  userId: [90mundefined[39m,
+  appId: [90mundefined[39m,
+  clusterId: [90mundefined[39m
+} {"origin":"cs","eventGroup":"general","action":"StartTransaction","context":{"stationId":"SIM_250822008C06","correlationId":"310c1f0a-e439-4bc8-b247-7e125f7041c4","tenantId":1,"timestamp":"2026-02-10T11:11:53.104Z"},"state":1,"protocol":"ocpp1.6","payload":{"connectorId":1,"idTag":"TEST123","meterStart":0,"timestamp":"2026-02-10T11:11:53.103Z"}}
+[37m2026-02-10 11:11:53.118[39m[0m[0m	[32m[1mDEBUG[22m[39m[0m[0m	[37m/usr/local/apps/citrineos/03_Modules/Transactions/dist/module/module.js:333[39m[0m[0m[1m[37m	CitrineOS Logger:TransactionsModule[39m[22m[0m[0m	OCPP 1.6 StartTransaction request received: Message {
+  _origin: [32m'cs'[39m,
+  _eventGroup: [32m'general'[39m,
+  _action: [32m'StartTransaction'[39m,
+  _state: [33m1[39m,
+  _context: {
+    stationId: [32m'SIM_250822008C06'[39m,
+    correlationId: [32m'310c1f0a-e439-4bc8-b247-7e125f7041c4'[39m,
+    tenantId: [33m1[39m,
+--
+  _protocol: [32m'ocpp1.6'[39m
+} {
+  contentType: [32m'application/json'[39m,
+  contentEncoding: [32m'utf-8'[39m,
+  headers: {
+    action: [32m'StartTransaction'[39m,
+    correlationId: [32m'310c1f0a-e439-4bc8-b247-7e125f7041c4'[39m,
+    eventGroup: [32m'general'[39m,
+    origin: [32m'cs'[39m,
+    state: [32m'1'[39m,
+    stationId: [32m'SIM_250822008C06'[39m,
+--
+	[37m/usr/local/apps/citrineos/node_modules/sequelize/lib/model.js:2490[39m[0m[0m
+  • [33mTransactionEvent.js[39m[0m[0m	[0m[0m
+	[37masync /usr/local/apps/citrineos/01_Data/dist/layers/sequelize/repository/TransactionEvent.js:498[39m[0m[0m
+  • [33msequelize.js[39m[0m[0m	[0m[0m
+	[37masync /usr/local/apps/citrineos/node_modules/sequelize/lib/sequelize.js:507[39m[0m[0m
+  • [33mTransactionEvent.js[39m[0m[0m	async SequelizeTransactionEventRepository.createTransactionByStartTransaction[0m[0m
+	[37m/usr/local/apps/citrineos/01_Data/dist/layers/sequelize/repository/TransactionEvent.js:444[39m[0m[0m
+  • [33mmodule.js[39m[0m[0m	async TransactionsModule._handleOcpp16StartTransaction[0m[0m
+	[37m/usr/local/apps/citrineos/03_Modules/Transactions/dist/module/module.js:346[39m[0m[0m
+  • [33mAbstractModule.js[39m[0m[0m	async TransactionsModule.handle[0m[0m
+	[37m/usr/local/apps/citrineos/00_Base/dist/interfaces/modules/AbstractModule.js:80[39m[0m[0m[0m[0m
+[37m2026-02-10 11:11:53.186[39m[0m[0m	[32m[1mDEBUG[22m[39m[0m[0m	[37m/usr/local/apps/citrineos/02_Util/dist/queue/rabbit-mq/sender.js:93[39m[0m[0m[1m[37m	CitrineOS Logger:RabbitMqSender[39m[22m[0m[0m	Publishing to citrineos: Message {
+  _origin: [32m'csms'[39m,
+  _eventGroup: [32m'general'[39m,
+  _action: [32m'StartTransaction'[39m,
+  _state: [33m2[39m,
+  _context: {
+    stationId: [32m'SIM_250822008C06'[39m,
+    correlationId: [32m'310c1f0a-e439-4bc8-b247-7e125f7041c4'[39m,
+    tenantId: [33m1[39m,
+--
+}
+[37m2026-02-10 11:11:53.189[39m[0m[0m	[32m[1mDEBUG[22m[39m[0m[0m	[37m/usr/local/apps/citrineos/02_Util/dist/queue/rabbit-mq/receiver.js:284[39m[0m[0m[1m[37m	CitrineOS Logger:RabbitMqReceiver[39m[22m[0m[0m	_onMessage:Received message: {
+  contentType: [32m'application/json'[39m,
+  contentEncoding: [32m'utf-8'[39m,
+  headers: {
+    action: [32m'StartTransaction'[39m,
+    correlationId: [32m'310c1f0a-e439-4bc8-b247-7e125f7041c4'[39m,
+    eventGroup: [32m'general'[39m,
+    origin: [32m'csms'[39m,

@@ -1,19 +1,19 @@
-nohup: ignoring input
 
 > citrineos-user-ui@0.1.0 dev
-> next dev -p 9310 -H 0.0.0.0
+> next dev -p 9310 -H 0.0.0.0 -p 3006
 
 ▲ Next.js 16.1.6 (Turbopack)
-- Local:         http://localhost:9310
-- Network:       http://0.0.0.0:9310
+- Local:         http://localhost:3006
+- Network:       http://0.0.0.0:3006
 - Environments: .env.local
 
 ✓ Starting...
-✓ Ready in 18.2s
-○ Compiling / ...
- GET /?id=1d1ee117-1306-468f-9303-8605f09c6c16&vscodeBrowserReqId=1770442398548 200 in 5.8s (compile: 4.9s, render: 875ms)
- GET /simple-test?id=1d1ee117-1306-468f-9303-8605f09c6c16&vscodeBrowserReqId=1770442464619 200 in 438ms (compile: 286ms, render: 151ms)
- HEAD /simple-test 200 in 164ms (compile: 56ms, render: 108ms)
- GET /simple-test?id=1d1ee117-1306-468f-9303-8605f09c6c16&vscodeBrowserReqId=1770442633670 200 in 667ms (compile: 431ms, render: 236ms)
- GET /simple-test?id=1d1ee117-1306-468f-9303-8605f09c6c16&vscodeBrowserReqId=1770442634711 200 in 146ms (compile: 36ms, render: 110ms)
- GET /simple-test?id=1d1ee117-1306-468f-9303-8605f09c6c16&vscodeBrowserReqId=1770442635543 200 in 179ms (compile: 62ms, render: 118ms)
+✓ Ready in 3.1s
+Persisting failed: Unable to write SST file 00000012.sst
+
+Caused by:
+    No such file or directory (os error 2)
+Persisting failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Persisting failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Persisting failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+[?25h

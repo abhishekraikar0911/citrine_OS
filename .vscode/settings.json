@@ -1,0 +1,9 @@
+{
+  "amazonQ.workspaceIndex": false,
+  "amazonQ.shareCodeWhispererContentWithAWS": false,
+  "[amazonq]": {
+    "workspaceIndex": false
+  },
+  "editor.inlayHints.enabled": false,
+  "extensions.ignoreRecommendations": false
+}

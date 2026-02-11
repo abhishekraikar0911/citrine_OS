@@ -1,0 +1,570 @@
+
+> citrineos-user-ui@0.1.0 dev
+> next dev -p 9310 -H 0.0.0.0 -p 3001
+
+▲ Next.js 16.1.6 (Turbopack)
+- Local:         http://localhost:3001
+- Network:       http://0.0.0.0:3001
+- Environments: .env.local
+
+✓ Starting...
+✓ Ready in 5.1s
+API Route: Sending query to Hasura...
+API Route: Hasura Result: {
+  "ChargingStations": [
+    {
+      "id": "250822008C06",
+      "isOnline": true
+    },
+    {
+      "id": "TEST123",
+      "isOnline": null
+    }
+  ]
+}
+ POST /api/graphql 200 in 1651ms (compile: 1471ms, render: 180ms)
+ GET /?id=18f5874f-e5d4-4d79-bc21-5eab0a535de3&vscodeBrowserReqId=1770705681879 200 in 3.4s (compile: 2.6s, render: 797ms)
+API Route: Sending query to Hasura...
+API Route: Hasura Result: {
+  "ChargingStations": [
+    {
+      "id": "250822008C06",
+      "isOnline": true,
+      "locationId": null,
+      "chargePointModel": "flashCharger",
+      "chargePointVendor": "Rivot Motors"
+    },
+    {
+      "id": "TEST123",
+      "isOnline": null,
+      "locationId": null,
+      "chargePointModel": null,
+      "chargePointVendor": null
+    }
+  ]
+}
+ POST /api/graphql 200 in 264ms (compile: 28ms, render: 235ms)
+API Route: Sending query to Hasura...
+API Route: Hasura Result: {
+  "ChargingStations": [
+    {
+      "id": "250822008C06",
+      "isOnline": true
+    },
+    {
+      "id": "TEST123",
+      "isOnline": null
+    }
+  ]
+}
+ POST /api/graphql 200 in 715ms (compile: 470ms, render: 245ms)
+ GET /?id=18f5874f-e5d4-4d79-bc21-5eab0a535de3&vscodeBrowserReqId=1770705730511 200 in 171ms (compile: 39ms, render: 132ms)
+API Route: Sending query to Hasura...
+API Route: Hasura Result: {
+  "ChargingStations": [
+    {
+      "id": "250822008C06",
+      "isOnline": true,
+      "locationId": null,
+      "chargePointModel": "flashCharger",
+      "chargePointVendor": "Rivot Motors"
+    },
+    {
+      "id": "TEST123",
+      "isOnline": null,
+      "locationId": null,
+      "chargePointModel": null,
+      "chargePointVendor": null
+    }
+  ]
+}
+ POST /api/graphql 200 in 469ms (compile: 31ms, render: 438ms)
+○ Compiling /stations/[id] ...
+ GET /stations/250822008C06 200 in 6.4s (compile: 6.3s, render: 96ms)
+API Route: Sending query to Hasura...
+API Route: Sending query to Hasura...
+API Route: Hasura Result: {
+  "ChargingStations": [
+    {
+      "id": "250822008C06",
+      "isOnline": true,
+      "protocol": "ocpp1.6",
+      "chargePointVendor": "Rivot Motors",
+      "chargePointModel": "flashCharger",
+      "updatedAt": "2026-02-10T05:35:08.633+00:00"
+    }
+  ],
+  "Connectors": [
+    {
+      "id": 1,
+      "connectorId": 1,
+      "status": "Charging",
+      "errorCode": "NoError",
+      "timestamp": "2026-02-10T05:32:19+00:00",
+      "type": "type6"
+    }
+  ],
+  "VariableAttributes": [
+    {
+      "value": "true",
+      "generatedAt": null,
+      "variableId": 1
+    },
+    {
+      "value": "true",
+      "generatedAt": null,
+      "variableId": 2
+    },
+    {
+      "value": "true",
+      "generatedAt": null,
+      "variableId": 3
+    },
+    {
+      "value": "100",
+      "generatedAt": "2026-02-10T04:40:27.111+00:00",
+      "variableId": 4
+    },
+    {
+      "value": "5",
+      "generatedAt": "2026-02-10T04:40:27.111+00:00",
+      "variableId": 5
+    },
+    {
+      "value": "Classic",
+      "generatedAt": "2026-02-10T04:40:27.111+00:00",
+      "variableId": 6
+    },
+    {
+      "value": "81",
+      "generatedAt": "2026-02-10T04:40:27.111+00:00",
+      "variableId": 7
+    }
+  ],
+  "Variables": [
+    {
+      "id": 1,
+      "name": "Present"
+    },
+    {
+      "id": 2,
+      "name": "Available"
+    },
+    {
+      "id": 3,
+      "name": "Enabled"
+    },
+    {
+      "id": 4,
+      "name": "Soc"
+    },
+    {
+      "id": 5,
+      "name": "MaxCurrent"
+    },
+    {
+      "id": 6,
+      "name": "Model"
+    },
+    {
+      "id": 7,
+      "name": "Range"
+    }
+  ],
+  "Transactions": []
+}
+ POST /api/graphql 200 in 1480ms (compile: 63ms, render: 1417ms)
+API Route: Hasura Result: {
+  "ChargingStations": [
+    {
+      "id": "250822008C06",
+      "isOnline": true,
+      "protocol": "ocpp1.6",
+      "chargePointVendor": "Rivot Motors",
+      "chargePointModel": "flashCharger",
+      "updatedAt": "2026-02-10T05:35:08.633+00:00"
+    }
+  ],
+  "Connectors": [
+    {
+      "id": 1,
+      "connectorId": 1,
+      "status": "Charging",
+      "errorCode": "NoError",
+      "timestamp": "2026-02-10T05:32:19+00:00",
+      "type": "type6"
+    }
+  ],
+  "VariableAttributes": [
+    {
+      "value": "true",
+      "generatedAt": null,
+      "variableId": 1
+    },
+    {
+      "value": "true",
+      "generatedAt": null,
+      "variableId": 2
+    },
+    {
+      "value": "true",
+      "generatedAt": null,
+      "variableId": 3
+    },
+    {
+      "value": "100",
+      "generatedAt": "2026-02-10T04:40:27.111+00:00",
+      "variableId": 4
+    },
+    {
+      "value": "5",
+      "generatedAt": "2026-02-10T04:40:27.111+00:00",
+      "variableId": 5
+    },
+    {
+      "value": "Classic",
+      "generatedAt": "2026-02-10T04:40:27.111+00:00",
+      "variableId": 6
+    },
+    {
+      "value": "81",
+      "generatedAt": "2026-02-10T04:40:27.111+00:00",
+      "variableId": 7
+    }
+  ],
+  "Variables": [
+    {
+      "id": 1,
+      "name": "Present"
+    },
+    {
+      "id": 2,
+      "name": "Available"
+    },
+    {
+      "id": 3,
+      "name": "Enabled"
+    },
+    {
+      "id": 4,
+      "name": "Soc"
+    },
+    {
+      "id": 5,
+      "name": "MaxCurrent"
+    },
+    {
+      "id": 6,
+      "name": "Model"
+    },
+    {
+      "id": 7,
+      "name": "Range"
+    }
+  ],
+  "Transactions": []
+}
+ POST /api/graphql 200 in 1714ms (compile: 105ms, render: 1609ms)
+API Route: Sending query to Hasura...
+API Route: Hasura Result: {
+  "ChargingStations": [
+    {
+      "id": "250822008C06",
+      "isOnline": true,
+      "protocol": "ocpp1.6",
+      "chargePointVendor": "Rivot Motors",
+      "chargePointModel": "flashCharger",
+      "updatedAt": "2026-02-10T05:35:08.633+00:00"
+    }
+  ],
+  "Connectors": [
+    {
+      "id": 1,
+      "connectorId": 1,
+      "status": "Charging",
+      "errorCode": "NoError",
+      "timestamp": "2026-02-10T05:32:19+00:00",
+      "type": "type6"
+    }
+  ],
+  "VariableAttributes": [
+    {
+      "value": "true",
+      "generatedAt": null,
+      "variableId": 1
+    },
+    {
+      "value": "true",
+      "generatedAt": null,
+      "variableId": 2
+    },
+    {
+      "value": "true",
+      "generatedAt": null,
+      "variableId": 3
+    },
+    {
+      "value": "100",
+      "generatedAt": "2026-02-10T04:40:27.111+00:00",
+      "variableId": 4
+    },
+    {
+      "value": "5",
+      "generatedAt": "2026-02-10T04:40:27.111+00:00",
+      "variableId": 5
+    },
+    {
+      "value": "Classic",
+      "generatedAt": "2026-02-10T04:40:27.111+00:00",
+      "variableId": 6
+    },
+    {
+      "value": "81",
+      "generatedAt": "2026-02-10T04:40:27.111+00:00",
+      "variableId": 7
+    }
+  ],
+  "Variables": [
+    {
+      "id": 1,
+      "name": "Present"
+    },
+    {
+      "id": 2,
+      "name": "Available"
+    },
+    {
+      "id": 3,
+      "name": "Enabled"
+    },
+    {
+      "id": 4,
+      "name": "Soc"
+    },
+    {
+      "id": 5,
+      "name": "MaxCurrent"
+    },
+    {
+      "id": 6,
+      "name": "Model"
+    },
+    {
+      "id": 7,
+      "name": "Range"
+    }
+  ],
+  "Transactions": []
+}
+ POST /api/graphql 200 in 453ms (compile: 151ms, render: 302ms)
+API Route: Sending query to Hasura...
+API Route: Hasura Result: {
+  "ChargingStations": [
+    {
+      "id": "250822008C06",
+      "isOnline": true,
+      "protocol": "ocpp1.6",
+      "chargePointVendor": "Rivot Motors",
+      "chargePointModel": "flashCharger",
+      "updatedAt": "2026-02-10T05:35:08.633+00:00"
+    }
+  ],
+  "Connectors": [
+    {
+      "id": 1,
+      "connectorId": 1,
+      "status": "Charging",
+      "errorCode": "NoError",
+      "timestamp": "2026-02-10T05:32:19+00:00",
+      "type": "type6"
+    }
+  ],
+  "VariableAttributes": [
+    {
+      "value": "true",
+      "generatedAt": null,
+      "variableId": 1
+    },
+    {
+      "value": "true",
+      "generatedAt": null,
+      "variableId": 2
+    },
+    {
+      "value": "true",
+      "generatedAt": null,
+      "variableId": 3
+    },
+    {
+      "value": "100",
+      "generatedAt": "2026-02-10T04:40:27.111+00:00",
+      "variableId": 4
+    },
+    {
+      "value": "5",
+      "generatedAt": "2026-02-10T04:40:27.111+00:00",
+      "variableId": 5
+    },
+    {
+      "value": "Classic",
+      "generatedAt": "2026-02-10T04:40:27.111+00:00",
+      "variableId": 6
+    },
+    {
+      "value": "81",
+      "generatedAt": "2026-02-10T04:40:27.111+00:00",
+      "variableId": 7
+    }
+  ],
+  "Variables": [
+    {
+      "id": 1,
+      "name": "Present"
+    },
+    {
+      "id": 2,
+      "name": "Available"
+    },
+    {
+      "id": 3,
+      "name": "Enabled"
+    },
+    {
+      "id": 4,
+      "name": "Soc"
+    },
+    {
+      "id": 5,
+      "name": "MaxCurrent"
+    },
+    {
+      "id": 6,
+      "name": "Model"
+    },
+    {
+      "id": 7,
+      "name": "Range"
+    }
+  ],
+  "Transactions": []
+}
+ POST /api/graphql 200 in 587ms (compile: 160ms, render: 427ms)
+✓ Compiled in 433ms
+API Route: Sending query to Hasura...
+API Route: Hasura Result: {
+  "ChargingStations": [
+    {
+      "id": "250822008C06",
+      "isOnline": true,
+      "protocol": "ocpp1.6",
+      "chargePointVendor": "Rivot Motors",
+      "chargePointModel": "flashCharger",
+      "updatedAt": "2026-02-10T05:35:08.633+00:00"
+    }
+  ],
+  "Connectors": [
+    {
+      "id": 1,
+      "connectorId": 1,
+      "status": "Charging",
+      "errorCode": "NoError",
+      "timestamp": "2026-02-10T05:32:19+00:00",
+      "type": "type6"
+    }
+  ],
+  "VariableAttributes": [
+    {
+      "value": "true",
+      "generatedAt": null,
+      "variableId": 1
+    },
+    {
+      "value": "true",
+      "generatedAt": null,
+      "variableId": 2
+    },
+    {
+      "value": "true",
+      "generatedAt": null,
+      "variableId": 3
+    },
+    {
+      "value": "100",
+      "generatedAt": "2026-02-10T04:40:27.111+00:00",
+      "variableId": 4
+    },
+    {
+      "value": "5",
+      "generatedAt": "2026-02-10T04:40:27.111+00:00",
+      "variableId": 5
+    },
+    {
+      "value": "Classic",
+      "generatedAt": "2026-02-10T04:40:27.111+00:00",
+      "variableId": 6
+    },
+    {
+      "value": "81",
+      "generatedAt": "2026-02-10T04:40:27.111+00:00",
+      "variableId": 7
+    }
+  ],
+  "Variables": [
+    {
+      "id": 1,
+      "name": "Present"
+    },
+    {
+      "id": 2,
+      "name": "Available"
+    },
+    {
+      "id": 3,
+      "name": "Enabled"
+    },
+    {
+      "id": 4,
+      "name": "Soc"
+    },
+    {
+      "id": 5,
+      "name": "MaxCurrent"
+    },
+    {
+      "id": 6,
+      "name": "Model"
+    },
+    {
+      "id": 7,
+      "name": "Range"
+    }
+  ],
+  "Transactions": []
+}
+ POST /api/graphql 200 in 93ms (compile: 33ms, render: 59ms)
+ POST /api/graphql 200 in 646ms (compile: 368ms, render: 278ms)
+ POST /api/graphql 200 in 754ms (compile: 74ms, render: 680ms)
+ POST /api/graphql 200 in 268ms (compile: 72ms, render: 197ms)
+ POST /api/graphql 200 in 477ms (compile: 306ms, render: 171ms)
+ POST /api/graphql 200 in 124ms (compile: 33ms, render: 91ms)
+ POST /api/graphql 200 in 111ms (compile: 23ms, render: 88ms)
+ POST /api/graphql 200 in 171ms (compile: 35ms, render: 135ms)
+ POST /api/graphql 200 in 99ms (compile: 43ms, render: 57ms)
+ POST /api/graphql 200 in 199ms (compile: 28ms, render: 170ms)
+ POST /api/graphql 200 in 75ms (compile: 28ms, render: 47ms)
+ POST /api/graphql 200 in 68ms (compile: 26ms, render: 43ms)
+ POST /api/graphql 200 in 56ms (compile: 24ms, render: 32ms)
+ POST /api/graphql 200 in 110ms (compile: 39ms, render: 71ms)
+ POST /api/graphql 200 in 133ms (compile: 78ms, render: 56ms)
+ POST /api/graphql 200 in 90ms (compile: 46ms, render: 45ms)
+ POST /api/graphql 200 in 151ms (compile: 61ms, render: 90ms)
+ POST /api/graphql 200 in 76ms (compile: 28ms, render: 48ms)
+ POST /api/graphql 200 in 99ms (compile: 51ms, render: 48ms)
+ POST /api/graphql 200 in 126ms (compile: 22ms, render: 104ms)
+ POST /api/graphql 200 in 140ms (compile: 75ms, render: 64ms)
+ POST /api/graphql 200 in 342ms (compile: 25ms, render: 317ms)
+ POST /api/graphql 200 in 99ms (compile: 30ms, render: 69ms)
+ POST /api/graphql 200 in 869ms (compile: 294ms, render: 576ms)
+ POST /api/graphql 200 in 123ms (compile: 76ms, render: 48ms)
+ GET /?id=18f5874f-e5d4-4d79-bc21-5eab0a535de3&vscodeBrowserReqId=1770705908254 200 in 3.5s (compile: 1426ms, render: 2.0s)
+ POST /api/graphql 200 in 55ms (compile: 16ms, render: 39ms)

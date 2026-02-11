@@ -19,6 +19,7 @@ export default function VehicleDataCard({ vehicleData }: VehicleDataCardProps) {
             value: vehicleData.soc ? `${parseFloat(vehicleData.soc).toFixed(1)}%` : 'N/A',
             icon: Battery,
             color: 'emerald',
+            glow: true,
         },
         {
             label: 'Range',
@@ -41,39 +42,48 @@ export default function VehicleDataCard({ vehicleData }: VehicleDataCardProps) {
     ];
 
     return (
-        <div className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-xl">
-            <h2 className="mb-6 text-xl font-bold text-white">Vehicle Information</h2>
+        <div className="animate-enter glass-card rounded-3xl p-8">
+            <div className="mb-8 flex items-center justify-between">
+                <h2 className="text-2xl font-bold text-white tracking-tight">Vehicle Telemetry</h2>
+                <div className="rounded-full bg-indigo-500/10 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-indigo-400 ring-1 ring-indigo-500/20">
+                    Live Data
+                </div>
+            </div>
 
-            <div className="grid gap-4 sm:grid-cols-2">
-                {metrics.map((metric) => (
-                    <MetricCard key={metric.label} {...metric} />
+            <div className="grid gap-6 sm:grid-cols-2">
+                {metrics.map((metric, index) => (
+                    <MetricCard key={metric.label} {...metric} index={index} />
                 ))}
             </div>
 
             {vehicleData.socUpdatedAt && (
-                <p className="mt-4 text-xs text-indigo-300/60">
-                    Last updated: {new Date(vehicleData.socUpdatedAt).toLocaleString()}
-                </p>
+                <div className="mt-8 flex items-center gap-2 text-xs font-medium text-indigo-300/40">
+                    <span className="h-1.5 w-1.5 rounded-full bg-indigo-500/40" />
+                    Last sync: {new Date(vehicleData.socUpdatedAt).toLocaleTimeString()}
+                </div>
             )}
         </div>
     );
 }
 
-function MetricCard({ label, value, icon: Icon, color }: any) {
+function MetricCard({ label, value, icon: Icon, color, index, glow }: any) {
     const colorClasses = {
-        emerald: 'bg-emerald-500/20 text-emerald-400',
-        blue: 'bg-blue-500/20 text-blue-400',
-        purple: 'bg-purple-500/20 text-purple-400',
-        amber: 'bg-amber-500/20 text-amber-400',
+        emerald: 'bg-emerald-500/10 text-emerald-400 ring-emerald-500/20',
+        blue: 'bg-blue-500/10 text-blue-400 ring-blue-500/20',
+        purple: 'bg-purple-500/10 text-purple-400 ring-purple-500/20',
+        amber: 'bg-amber-500/10 text-amber-400 ring-amber-500/20',
     };
 
     return (
-        <div className="rounded-xl bg-white/5 p-4">
-            <div className={`mb-3 inline-flex rounded-lg p-2 ${colorClasses[color as keyof typeof colorClasses]}`}>
-                <Icon size={20} />
+        <div
+            className="group glass rounded-2xl p-5 transition-all hover:bg-white/[0.07] hover:shadow-lg"
+            style={{ animationDelay: `${index * 100}ms` }}
+        >
+            <div className={`mb-4 inline-flex rounded-xl p-2.5 ring-1 ${colorClasses[color as keyof typeof colorClasses]}`}>
+                <Icon size={22} className={glow ? 'animate-pulse' : ''} />
             </div>
-            <p className="text-sm text-indigo-300/60">{label}</p>
-            <p className="mt-1 text-2xl font-bold text-white">{value}</p>
+            <p className="text-xs font-bold uppercase tracking-wider text-indigo-300/40">{label}</p>
+            <p className="mt-1.5 text-2xl font-extrabold text-white tracking-tight">{value}</p>
         </div>
     );
 }

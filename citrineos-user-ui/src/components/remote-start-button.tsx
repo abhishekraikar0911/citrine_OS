@@ -35,8 +35,8 @@ export default function RemoteStartButton({
 
         const action = isCharging ? 'remoteStopTransaction' : 'remoteStartTransaction';
         const body = isCharging
-            ? { transactionId: parseInt(activeTransactionId) }
-            : { connectorId: 1, idTag: 'TEST123' };
+            ? { transactionId: parseInt(activeTransactionId!) }
+            : { connectorId: 1, idTag: localStorage.getItem('idTag') || 'CITRINE_USER' };
 
         try {
             const response = await fetch(
@@ -51,12 +51,12 @@ export default function RemoteStartButton({
             const result = await response.json();
 
             if (response.ok && result[0]?.success) {
-                setMessage({ type: 'success', text: `Action ${action} accepted!` });
+                setMessage({ type: 'success', text: `${isCharging ? 'Stop' : 'Start'} command accepted by the station.` });
             } else {
-                setMessage({ type: 'error', text: `Failed to ${isCharging ? 'stop' : 'start'} session. Please try again.` });
+                setMessage({ type: 'error', text: `Failed to ${isCharging ? 'stop' : 'start'} session. Please check connection.` });
             }
         } catch (error: any) {
-            setMessage({ type: 'error', text: `Error: ${error.message}` });
+            setMessage({ type: 'error', text: `Network Error: ${error.message}` });
         } finally {
             setLoading(false);
             setShowConfirm(false);
@@ -65,45 +65,63 @@ export default function RemoteStartButton({
 
     if (disabled) {
         return (
-            <div className="mt-6 rounded-xl border border-red-500/20 bg-red-500/10 p-4">
-                <div className="flex items-center gap-2 text-red-400">
-                    <AlertCircle size={20} />
-                    <span>Station unavailable for charging</span>
+            <div className="mt-8 animate-enter glass-card rounded-2xl border-red-500/20 bg-red-500/5 p-6">
+                <div className="flex items-center gap-3 text-red-400">
+                    <div className="rounded-full bg-red-500/20 p-2">
+                        <AlertCircle size={20} />
+                    </div>
+                    <span className="font-semibold">Station currently unavailable for charging</span>
                 </div>
             </div>
         );
     }
 
     return (
-        <>
+        <div className="mt-8 space-y-4">
             {message && (
-                <div className={`mt-6 rounded-xl border p-4 ${message.type === 'success'
-                    ? 'border-emerald-500/20 bg-emerald-500/10 text-emerald-400'
-                    : 'border-red-500/20 bg-red-500/10 text-red-400'
+                <div className={`animate-enter glass-card rounded-2xl p-6 transition-all ${message.type === 'success'
+                    ? 'border-emerald-500/20 bg-emerald-500/5 text-emerald-400'
+                    : 'border-red-500/20 bg-red-500/5 text-red-400'
                     }`}>
-                    {message.text}
+                    <div className="flex items-center gap-3">
+                        <AlertCircle size={20} className={message.type === 'success' ? 'text-emerald-400' : 'text-red-400'} />
+                        <span className="font-medium">{message.text}</span>
+                    </div>
                 </div>
             )}
-
 
             <button
                 onClick={() => isCharging ? handleAction() : setShowConfirm(true)}
                 disabled={loading}
-                className={`mt-6 w-full rounded-xl py-4 font-semibold text-white transition-all active:scale-95 disabled:opacity-50 ${isCharging
-                    ? 'bg-slate-100/10 border border-white/20 hover:bg-white/10'
-                    : 'bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500'
+                className={`group relative w-full overflow-hidden rounded-2xl py-5 font-bold text-white transition-all active:scale-95 disabled:opacity-50 ${isCharging
+                    ? 'animate-pulse-glow bg-white/5 border border-white/20 hover:bg-white/10'
+                    : 'bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 shadow-xl shadow-indigo-600/20 hover:from-indigo-500 hover:to-pink-500'
                     }`}
             >
-                {isCharging ? (
-                    <>
-                        <Square className="inline mr-2" size={20} fill="currentColor" />
-                        Stop Charging
-                    </>
-                ) : (
-                    <>
-                        <Play className="inline mr-2" size={20} />
-                        Start Charging
-                    </>
+                {/* Loader Overlay */}
+                {loading && (
+                    <div className="absolute inset-0 z-10 flex items-center justify-center bg-black/20 backdrop-blur-sm">
+                        <div className="h-5 w-5 animate-spin rounded-full border-2 border-white border-t-transparent" />
+                    </div>
+                )}
+
+                <div className="relative flex items-center justify-center gap-3">
+                    {isCharging ? (
+                        <>
+                            <Square size={20} className="fill-white" />
+                            <span>Stop Charging Session</span>
+                        </>
+                    ) : (
+                        <>
+                            <Play size={20} className="fill-white" />
+                            <span>Begin Charging Session</span>
+                        </>
+                    )}
+                </div>
+
+                {/* Shine Effect */}
+                {!isCharging && (
+                    <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform duration-1000 group-hover:translate-x-full" />
                 )}
             </button>
 
@@ -115,6 +133,6 @@ export default function RemoteStartButton({
                     loading={loading}
                 />
             )}
-        </>
+        </div>
     );
 }
