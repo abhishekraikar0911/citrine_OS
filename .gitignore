@@ -17,3 +17,7 @@ node_modules/
 # Logs
 *.log
 backup_temp_files/*.tar.gz
+backup_temp_files/
+*.log
+*.save
+node_modules/
