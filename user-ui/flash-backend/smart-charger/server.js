@@ -21,7 +21,7 @@ const pool = new Pool({
 
 /* ==============================
    STRIPE CHECKOUT API
-============================= */
+============================== */
 app.use(express.json());
 
 app.post("/api/checkouts", async (req, res) => {
@@ -36,7 +36,7 @@ app.post("/api/checkouts", async (req, res) => {
           price_data: {
             currency: "inr",
             product_data: { name: "EV Charging" },
-            unit_amount: Math.round(target_kwh * 100 * 10) // ₹10 per kWh
+            unit_amount: Math.round(target_kwh * 10 * 100) // ₹10 per kWh
           },
           quantity: 1
         }
@@ -60,15 +60,13 @@ app.post("/api/checkouts", async (req, res) => {
 
 /* ==============================
    STRIPE WEBHOOK
-============================= */
+============================== */
 app.post(
   "/webhook",
   bodyParser.raw({ type: "application/json" }),
   async (req, res) => {
     const sig = req.headers["stripe-signature"];
     let event;
-
-    console.log("Webhook hit");
 
     try {
       event = stripe.webhooks.constructEvent(req.body, sig, process.env.STRIPE_WEBHOOK_SECRET);
@@ -78,32 +76,29 @@ app.post(
       return res.status(400).send(`Webhook Error: ${err.message}`);
     }
 
+    if (event.type === "checkout.session.completed") {
+      const session = event.data.object;
+      const { evse_id, target_kwh, mode, target_value } = session.metadata;
 
-if (event.type === "checkout.session.completed") {
-  const session = event.data.object;
-  console.log("Checkout session completed event received ✅");
+      try {
+        // 1️⃣ Insert new session as pending
+        const result = await pool.query(
+          `INSERT INTO app_charging_sessions
+           (charger_id, connector_id, target_kwh, status, start_energy, mode, target_value, created_at)
+           VALUES ($1, $2, $3, 'pending', 0, $4, $5, now())
+           RETURNING id`,
+          [evse_id, 1, target_kwh, mode, target_value]
+        );
 
-  const { evse_id, target_kwh, mode, target_value } = session.metadata;
+        const sessionId = result.rows[0].id;
+        console.log("Inserted new pending session ✅ ID:", sessionId);
 
-  try {
-    const result = await pool.query(
-      `INSERT INTO app_charging_sessions
-       (charger_id, connector_id, target_kwh, status, start_energy, mode, target_value, created_at)
-       VALUES ($1, $2, $3, 'pending', 0, $4, $5, now())
-       RETURNING id`,
-      [evse_id, 1, target_kwh, mode, target_value] // assuming connector_id=1 for now
-    );
-
-    const sessionId = result.rows[0].id;
-    console.log("Inserted new pending session into DB ✅", sessionId);
-
-    // Optionally, immediately try to start the charger
-    await tryStartCharger(evse_id, 1, target_kwh, sessionId);
-
-  } catch (dbErr) {
-    console.error("Error inserting session into DB:", dbErr.message);
-  }
-}
+        // 2️⃣ Immediately try to start the charger
+        await tryStartCharger(evse_id, 1, target_kwh, sessionId);
+      } catch (dbErr) {
+        console.error("Error inserting session into DB:", dbErr.message);
+      }
+    }
 
     res.sendStatus(200);
   }
@@ -111,7 +106,7 @@ if (event.type === "checkout.session.completed") {
 
 /* ==============================
    TRY START CHARGER
-============================= */
+============================== */
 async function tryStartCharger(chargerId, connectorId, targetKwh, sessionId) {
   try {
     await axios.post(
@@ -121,7 +116,7 @@ async function tryStartCharger(chargerId, connectorId, targetKwh, sessionId) {
 
     console.log("RemoteStart sent");
 
-    // Wait for transaction to appear in DB
+    // Wait 4s for transaction to appear
     await new Promise(resolve => setTimeout(resolve, 4000));
 
     const tx = await pool.query(
@@ -141,7 +136,7 @@ async function tryStartCharger(chargerId, connectorId, targetKwh, sessionId) {
     const transactionId = tx.rows[0].transactionId;
     const startWh = tx.rows[0].meterStart;
 
-    // Update pending session with actual transaction info
+    // Update pending session to 'charging'
     await pool.query(
       `UPDATE app_charging_sessions
        SET transaction_id=$1, start_energy=$2, status='charging'
@@ -150,7 +145,6 @@ async function tryStartCharger(chargerId, connectorId, targetKwh, sessionId) {
     );
 
     console.log("Pending session updated. Charging started ✅");
-
   } catch (err) {
     console.error("Error starting charger:", err.message);
   }
@@ -158,10 +152,10 @@ async function tryStartCharger(chargerId, connectorId, targetKwh, sessionId) {
 
 /* ==============================
    AUTO-MONITOR (Every 5s)
-============================= */
+============================== */
 setInterval(async () => {
   try {
-    // Monitor active charging sessions
+    // 1️⃣ Monitor active sessions
     const sessions = await pool.query(`SELECT * FROM app_charging_sessions WHERE status='charging'`);
 
     for (const session of sessions.rows) {
@@ -200,12 +194,11 @@ setInterval(async () => {
       }
     }
 
-    // Retry pending sessions if charger was offline
+    // 2️⃣ Retry pending sessions if charger was offline
     const pending = await pool.query(`SELECT * FROM app_charging_sessions WHERE status='pending'`);
     for (const s of pending.rows) {
       await tryStartCharger(s.charger_id, s.connector_id, s.target_kwh, s.id);
     }
-
   } catch (err) {
     console.error("Monitor error:", err.message);
   }
@@ -213,7 +206,7 @@ setInterval(async () => {
 
 /* ==============================
    SERVER
-============================= */
+============================== */
 app.listen(9010, "0.0.0.0", () => {
   console.log("Stripe + Smart Charging running on port 9010 ✅");
 });
