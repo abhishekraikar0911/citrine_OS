@@ -1,0 +1,3 @@
+[submodule "user-ui"]
+	path = user-ui
+	url = git@github.com:abhishekraikar0911/flashCharge-user-ui.git
