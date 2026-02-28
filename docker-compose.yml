@@ -4,6 +4,7 @@ services:
   amqp-broker:
     image: rabbitmq:3-management
     container_name: csms-rabbitmq
+    restart: unless-stopped
     ports:
       - "15672:15672"
       - "5672:5672"
@@ -28,6 +29,9 @@ services:
   ocpp-db:
     image: postgis/postgis:16-3.5
     container_name: csms-postgres
+    restart: unless-stopped
+    ports:
+      - "5432:5432"
     volumes:
       - ./data/postgresql/pgdata:/var/lib/postgresql/data
     environment:
@@ -35,7 +39,7 @@ services:
       POSTGRES_USER: ${POSTGRES_USER}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB}"]
+      test: [ "CMD-SHELL", "pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB}" ]
       interval: 5s
       timeout: 10s
       retries: 5
@@ -52,6 +56,7 @@ services:
       context: ./citrineos-core
       dockerfile: ./Server/deploy.Dockerfile
     container_name: csms-core
+    restart: unless-stopped
     volumes:
       - ./data:/data
     environment:
@@ -74,18 +79,14 @@ services:
       amqp-broker:
         condition: service_healthy
     ports:
-      - "8081:8080"  # API (Central System)
-      - "8082:8082"  # OCPP 2.0.1 Profile 1
-      - "8443:8443"  # OCPP 2.0.1 Profile 2 (TLS)
-      - "8444:8444"  # OCPP 2.0.1 Profile 3 (mTLS)
-      - "9229:9229"  # Debug
-      - "8092:8092"  # OCPP 1.6 Profile 0
+      - "8081:8080" # API (Central System)
+      - "8082:8082" # OCPP 2.0.1 Profile 1
+      - "8443:8443" # OCPP 2.0.1 Profile 2 (TLS)
+      - "8444:8444" # OCPP 2.0.1 Profile 3 (mTLS)
+      - "9229:9229" # Debug
+      - "8092:8092" # OCPP 1.6 Profile 0
     healthcheck:
-      test:
-        [
-          "CMD-SHELL",
-          "node -e \"const net=require('net');const c=net.createConnection(8080,'127.0.0.1',()=>{c.end();process.exit(0);});c.on('error',()=>process.exit(1));\""
-        ]
+      test: [ "CMD-SHELL", "node -e \"const net=require('net');const c=net.createConnection(8080,'127.0.0.1',()=>{c.end();process.exit(0);});c.on('error',()=>process.exit(1));\"" ]
       interval: 30s
       timeout: 10s
       retries: 5
@@ -101,7 +102,7 @@ services:
   graphql-engine:
     image: hasura/graphql-engine:v2.40.3.cli-migrations-v3
     ports:
-      - "8090:8080"  # Moved from 8080 to avoid conflict with citrine
+      - "8090:8080" # Moved from 8080 to avoid conflict with citrine
     restart: always
     depends_on:
       citrine:
@@ -114,7 +115,7 @@ services:
       HASURA_GRAPHQL_ENABLE_TELEMETRY: "false"
       HASURA_GRAPHQL_ADMIN_SECRET: ${HASURA_GRAPHQL_ADMIN_SECRET}
     healthcheck:
-      test: ['CMD', 'curl', '-f', 'http://localhost:8080/healthz']
+      test: [ 'CMD', 'curl', '-f', 'http://localhost:8080/healthz' ]
       interval: 10s
       timeout: 5s
       retries: 5

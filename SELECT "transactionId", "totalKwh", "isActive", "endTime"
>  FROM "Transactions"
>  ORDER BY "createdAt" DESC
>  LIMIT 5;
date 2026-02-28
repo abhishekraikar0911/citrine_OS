@@ -1,0 +1,2 @@
+/usr/lib/postgresql/16/bin/psql: option requires an argument -- 'c'
+psql: hint: Try "psql --help" for more information.
